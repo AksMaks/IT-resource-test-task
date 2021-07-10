@@ -1,0 +1,35 @@
+table.table {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  table.table {
+    border: 0;
+  }
+
+  table.table tr {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  table.table th {
+    display: block;
+    text-align: center;
+  }
+  table.table td {
+      display: block;
+      text-align: right;
+  }
+
+  table.table td::before {
+      content: attr(data-label);
+      float: left;
+  }
+
+    table.table td:last-child {
+      border-bottom: 0;
+    }
+}
