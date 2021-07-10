@@ -9,10 +9,11 @@ const scope = (min, max) => value =>
 const scope1003000 = scope(100, 3000)
   const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-  'Invalid email address' : undefined
-const phone = value => value.slice(3).replace(/[^\d]/g, '').length < 10?  "Нормер введен не полностью": undefined
-const check14Years = value => ((new Date() - new Date(value))/(14*365*24*3600*1000)) <= 1? "Участие с 14 лет": undefined
+  'Неверный адрес электронной почты' : undefined
+const phone = value => value.slice(3).replace(/[^\d]/g, '').length < 10?  "Номер введен не полностью": undefined
+const check14Years = value => ((new Date() - new Date(value))/(14*365*24*3600*1000)) <= 1? "Участие толко с 14 лет": undefined
 
+//нормализация даты рождения (максимум +5 дней от текущей даты)
 const normalizeDate = (value) => {
   if (!value) {
     return value

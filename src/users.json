@@ -23,44 +23,6 @@
 			"phone": "+79008011000",
 			"distance": 3,
 			"payment": 1500
-		},
-    {
-      "id": "asdasd3123",
-      "date": "1987-03-11",
-      "dateBirth": "1987-03-11",
-			"name": "123",
-			"email": "123@mail.ru",
-      "password": "123",
-			"phone": "+7 231-231-2312",
-			"distance": 5,
-			"payment": 500
-    },
-		{
-			"date": "1997-05-08",
-			"name": "Мокрушина Галина Юрьевна",
-			"email": "mokrushina@mail.ru",
-			"phone": "+79881125999",
-			"distance": 10,
-			"payment": 300
-		},
-		{
-			"date": "1986-01-1984",
-			"name": "Ольга Сергеевна Заводская",
-			"email": "olga.zavodckaia@mail.ru",
-			"phone": "+79008011000",
-			"distance": 3,
-			"payment": 1500
-		},
-    {
-      "id": "asdasd3123",
-      "date": "1987-03-11",
-      "dateBirth": "1987-03-11",
-			"name": "123",
-			"email": "123@mail.ru",
-      "password": "123",
-			"phone": "+7 231-231-2312",
-			"distance": 5,
-			"payment": 500
-    }
+		}
 	]
 }

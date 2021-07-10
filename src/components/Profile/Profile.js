@@ -8,7 +8,7 @@ const profile = (props) => {
   const { registry } = props
   return (
     <div>
-      {props.authError && <div>{props.authError}</div>}
+      {props.authError && <div style={{color: "red"}}>{props.authError}</div>}
       {props.user? <ChengeForm/>: <AuthForm/>}
     </div>
   )

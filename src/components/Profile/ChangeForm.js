@@ -11,9 +11,23 @@ const scope = (min, max) => value =>
 const scope1003000 = scope(100, 3000)
   const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value) ?
-  'Invalid email address' : undefined
-const phone = value => value.slice(3).replace(/[^\d]/g, '').length < 10?  "Нормер введен не полностью": undefined
+  'Неверный адрес электронной почты' : undefined
+const phone = value => value.slice(3).replace(/[^\d]/g, '').length < 10?  "Номер введен не полностью": undefined
+const check14Years = value => ((new Date() - new Date(value))/(14*365*24*3600*1000)) <= 1? "Участие толко с 14 лет": undefined
 
+//нормализация даты рождения (максимум +5 дней от текущей даты)
+const normalizeDate = (value) => {
+  if (!value) {
+    return value
+  }
+  let date = new Date()
+  date.setDate(date.getDate() + 5)
+  if(date < new Date(value)){
+    return (date.getFullYear() + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + ('0' + date.getDate()).slice(-2))
+  }else{
+    return value
+  }
+}
 //нормализация номера телефона (приведение к шаблону "+7 999-999-999")
 const normalizePhone = (value) => {
     if (!value) {
@@ -51,7 +65,8 @@ const ChangeForm = (props) => {
           type="date"
           component={renderField}
           label="Дата рождения"
-          validate={[ required ]}
+          validate={[ required, check14Years]}
+          normalize={normalizeDate}
         />
         <Field 
           name="email" 
