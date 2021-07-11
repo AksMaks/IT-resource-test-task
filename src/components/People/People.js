@@ -51,7 +51,12 @@ const Participants = (props) => {
                     {title: "Email", key: "email"},
                     {title: "Дистанция", key: "distance"},
                     {title: "Сумма взноса", key: "payment"}]} 
-                data={people.slice(path*sizePath, (path+1)*sizePath)}/>
+                data={people.slice(path*sizePath, (path+1)*sizePath)
+                  .map(el => {
+                    let date = new Date(el.date)
+                    return {...el, date: ('0' + date.getDate()).slice(-2) + '-' + ('0' + (date.getMonth() + 1)).slice(-2) + '-' + date.getFullYear() }
+                  })}
+              />
             <div className="mt-2 mb-2">
                 <button className="btn btn-primary" onClick={() => changePath(path - 1)}>Назад</button>
                 <span style={{fontSize: "18px"}} className="mr-2 ml-2">{path}</span>
