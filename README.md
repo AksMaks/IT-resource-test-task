@@ -2,7 +2,8 @@
 Тестовое задание в компанию АйТи Ресурс
 
 Запуск
-https://aksmaks.github.io/IT-resource-test-task/Participants
+https://aksmaks.github.io/IT-resource-test-task
+
 или скачайте проект себе и запустите (npm i; npm start)
 
 Процесс разработки
