@@ -14,7 +14,7 @@ const Form = (props) => {
         {registry? 
           <RegistryForm 
             {...props}
-            textbutton={"Регистрация"}/>: 
+            textbutton={"Зарегистрироваться"}/>: 
           <BidForm 
             {...props}
             textbutton={"Отправить заявку"}/>
