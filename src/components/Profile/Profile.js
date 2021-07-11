@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import ChengeForm from './ChangeForm';
 import AuthForm from './AuthForm';
 
-const profile = (props) => {
+const Profile = (props) => {
   const { registry } = props
   return (
     <div>
@@ -24,4 +24,4 @@ let mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(profile);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

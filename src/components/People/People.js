@@ -6,7 +6,13 @@ import Table from './Table';
 const Participants = (props) => {
     let [path, setPath] = useState(0)
     let [sort, setSort] = useState({key: "date", type: false})
-    let [people, setPeople] = useState(props.people)
+    let [people, setPeople] = useState(props.people.sort((a, b) => {
+      if(sort.type){
+          return (a[sort.key] < b[sort.key])? -1: 1
+      }else{
+          return (a[sort.key] > b[sort.key])? -1: 1
+      }
+    }))
     const sizePath = 5 //Размер одной страницы
     let maxPath = props.people.length / sizePath //Максимальная страница
 
@@ -46,8 +52,7 @@ const Participants = (props) => {
                     {title: "Дистанция", key: "distance"},
                     {title: "Сумма взноса", key: "payment"}]} 
                 data={people.slice(path*sizePath, (path+1)*sizePath)}/>
-            
-            <div>
+            <div className="mt-2 mb-2">
                 <button className="btn btn-primary" onClick={() => changePath(path - 1)}>Назад</button>
                 <span style={{fontSize: "18px"}} className="mr-2 ml-2">{path}</span>
                 <button className="btn btn-primary" onClick={() => changePath(path + 1)}>Далее</button>

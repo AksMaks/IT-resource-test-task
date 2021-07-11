@@ -13,6 +13,7 @@ const Table = (props) => {
                             <th 
                                 key={uuidv4()}
                                 onClick={() => props.changeSort(el.key)}
+                                style={{cursor: "pointer"}}
                             >
                                 {el.title}
                                 {el.key == props.sort.key? (props.sort.type? "▲": "▼"): null}

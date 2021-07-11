@@ -10,12 +10,10 @@ const PeopleReducer = (state = initialState, action) => {
     let stateCopy = {...state};
     
 	switch (action.type) {
-        //Добавление участника
-        case "addUser":{
+        case "addUser":{ //Добавление участника
             stateCopy.users.push(action.data)
             return stateCopy;
-        //Авторизация участника
-        }case "authUser":{
+        }case "authUser":{ //Авторизация участника
           //поиск учатника
           let user = state.users.find(el => el.password == action.data.password)
           //Если если нету, то ошибка
@@ -26,8 +24,7 @@ const PeopleReducer = (state = initialState, action) => {
             stateCopy.error = "Ошибка. Введены неверные данные"
           }
           return stateCopy
-        //Редактирование данных авторизованого участника
-        }case "changeUser":{
+        }case "changeUser":{ //Редактирование данных авторизованого участника
           stateCopy.currentUser = null
           stateCopy.users = stateCopy.users.map(el => {
             if(el.id == state.currentUser.id){
